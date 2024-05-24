@@ -5,7 +5,7 @@ from utils.locators import GardenscapesLocators
 @pytest.mark.usefixtures("game_actions")
 class TestGardenscapes:
     
-    @pytest.mark.end_to_end
+    @pytest.mark.unit
     @allure.feature('Launch Game')
     @allure.story('Launch the game and wait for Play button')
     @allure.step('Check if Play button is present after launching the game')
@@ -13,7 +13,7 @@ class TestGardenscapes:
         game_actions.wait_for_element(GardenscapesLocators.PLAY_BUTTON_XPATH)
         assert game_actions.is_element_present(GardenscapesLocators.PLAY_BUTTON_XPATH), "Play button is not present after launching the game."
 
-    @pytest.mark.end_to_end
+    @pytest.mark.unit
     @allure.feature('Click Play Button')
     @allure.story('Click the Play button')
     @allure.step('Click Play button and verify it is no longer present')
@@ -21,7 +21,7 @@ class TestGardenscapes:
         game_actions.click_element(GardenscapesLocators.PLAY_BUTTON_XPATH)
         assert not game_actions.is_element_present(GardenscapesLocators.PLAY_BUTTON_XPATH), "Play button is still present after clicking it."
 
-    @pytest.mark.end_to_end
+    @pytest.mark.unit
     @allure.feature('Game Opened')
     @allure.story('Verify the game opened after clicking Play button')
     @allure.step('Verify game screen is present after clicking Play button')
