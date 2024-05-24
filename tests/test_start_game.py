@@ -14,7 +14,7 @@ class TestGardenscapes:
         assert game_actions.is_element_present(GardenscapesLocators.PLAY_BUTTON_XPATH), "Play button is not present after launching the game."
 
     @pytest.mark.unit
-    @allure.feature('Click Play Button')
+    @allure.feature('Launch Game')
     @allure.story('Click the Play button')
     @allure.step('Click Play button and verify it is no longer present')
     def test_click_play_button(self, game_actions):
@@ -22,15 +22,15 @@ class TestGardenscapes:
         assert not game_actions.is_element_present(GardenscapesLocators.PLAY_BUTTON_XPATH), "Play button is still present after clicking it."
 
     @pytest.mark.unit
-    @allure.feature('Game Opened')
+    @allure.feature('Launch Game')
     @allure.story('Verify the game opened after clicking Play button')
     @allure.step('Verify game screen is present after clicking Play button')
     def test_game_opened(self, game_actions):
         assert game_actions.is_element_present(GardenscapesLocators.GAME_SCREEN_XPATH), "Game screen did not open after clicking Play button."
 
     @pytest.mark.end_to_end
-    @allure.feature('End-to-End Test')
-    @allure.story('Complete end-to-end test')
+    @allure.feature('Launch Game')
+    @allure.story('Complete end-to-end launch game test')
     @allure.step('Perform end-to-end test from launching the game to verifying game screen')
     def test_end_to_end(self, game_actions):
         with allure.step('Launch the game and wait for Play button'):
