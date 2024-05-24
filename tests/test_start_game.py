@@ -27,10 +27,10 @@ class TestGardenscapes:
         game_screen_id = 'com.playrix.gardenscapes:id/game_screen'
         assert game_actions.is_element_present(game_screen_id), "Game screen did not open after clicking Play button."
 
-    @allure.feature('Start game End-to-End Test')
+    @allure.feature('End-to-End Test')
     @allure.story('Complete end-to-end test')
     @allure.step('Perform end-to-end test from launching the game to verifying game screen')
-    def test_start_game_e2e(self, game_actions):
+    def test_end_to_end(self, game_actions):
         play_button_id = 'com.playrix.gardenscapes:id/play_button'
         game_screen_id = 'com.playrix.gardenscapes:id/game_screen'
         
